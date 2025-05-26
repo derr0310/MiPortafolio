@@ -1,0 +1,19 @@
+---
+const menuItems = [
+  { name: "Inicio", id: "#inicio" },
+  { name: "Sobre mí", id: "#sobre-mi" },
+  { name: "Proyectos", id: "#proyectos" },
+  { name: "Contacto", id: "#contacto" }
+];
+---
+
+<nav class="fixed top-0 w-full bg-gray-900 text-white shadow-md">
+  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <h1 class="text-lg font-bold">Mi Portafolio</h1>
+    <ul class="flex space-x-4">
+      {menuItems.map((item) => (
+        <li><a href={item.id} class="hover:text-gray-300">{item.name}</a></li>
+      ))}
+    </ul>
+  </div>
+</nav>

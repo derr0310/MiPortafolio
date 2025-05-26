@@ -1,0 +1,43 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<html lang="es">
+  <head>
+    <title>Mi Portafolio</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/src/styles/global.css">
+  </head>
+  <body class="bg-gray-100">
+    <Navbar />
+
+  <section class="min-h-screen flex flex-col items-center justify-center text-center bg-gray-900 text-white">
+  <img src="/img/avatar.jpg" alt="Mi foto" class="w-32 h-32 rounded-full border-4 border-red-500 shadow-md">
+  <h1 class="text-5xl font-bold mt-4 text-red-500">Daniel [Tu Apellido]</h1>
+  <p class="text-lg mt-2">Desarrollador Web | Apasionado por la tecnología</p>
+  <button class="mt-6 px-6 py-3 bg-red-500 text-white font-bold rounded-lg hover:bg-red-600">
+    Descarga mi CV
+  </button>
+</section>
+    
+    <main class="container mx-auto py-20">
+      <section id="inicio" class="min-h-screen flex items-center justify-center">
+        <h2 class="text-3xl font-bold">Bienvenido a mi portafolio</h2>
+      </section>
+      <section id="sobre-mi" class="min-h-screen flex items-center justify-center">
+        <h2 class="text-3xl font-bold">Sobre mí</h2>
+      </section>
+      <section id="proyectos" class="min-h-screen flex items-center justify-center">
+        <h2 class="text-3xl font-bold">Mis Proyectos</h2>
+      </section>
+      <section id="contacto" class="min-h-screen flex items-center justify-center">
+        <h2 class="text-3xl font-bold">Contacto</h2>
+      </section>
+    </main>
+
+  
+
+    <Footer />
+  </body>
+</html>
