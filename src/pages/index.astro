@@ -1,6 +1,7 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
+import { proyectos } from "../data/proyectos";
 ---
 
 <html lang="es">
@@ -13,12 +14,13 @@ import Footer from "../components/Footer.astro";
     <Navbar />
 
   <section class="min-h-screen flex flex-col items-center justify-center text-center bg-gray-900 text-white">
-  <img src="/img/avatar.jpg" alt="Mi foto" class="w-32 h-32 rounded-full border-4 border-red-500 shadow-md">
-  <h1 class="text-5xl font-bold mt-4 text-red-500">Daniel [Tu Apellido]</h1>
-  <p class="text-lg mt-2">Desarrollador Web | Apasionado por la tecnología</p>
-  <button class="mt-6 px-6 py-3 bg-red-500 text-white font-bold rounded-lg hover:bg-red-600">
+  <img src="src/assets/images/fotoderr2.jpg" alt="Mi foto" class="w-32 h-32 rounded-full border-4 border-red-500 shadow-md">
+  <h1 class="text-5xl font-bold mt-4 text-red-500">Daniel Eduardo Risco Rivera</h1>
+  <p class="text-lg mt-2">Contabilidad | Tecnología</p>
+  <button onclick="window.location.href='src/assets/docs/resume - copia2.pdf'"  class="mt-6 px-6 py-3 bg-red-500 text-white font-bold rounded-lg hover:bg-red-600 cursor-pointer">
     Descarga mi CV
   </button>
+
 </section>
     
     <main class="container mx-auto py-20">
@@ -28,9 +30,39 @@ import Footer from "../components/Footer.astro";
       <section id="sobre-mi" class="min-h-screen flex items-center justify-center">
         <h2 class="text-3xl font-bold">Sobre mí</h2>
       </section>
-      <section id="proyectos" class="min-h-screen flex items-center justify-center">
-        <h2 class="text-3xl font-bold">Mis Proyectos</h2>
-      </section>
+
+   <section id="proyectos" class="py-10">
+  <h2 class="text-3xl font-bold text-center text-red-500 mb-6">Proyectos Destacados</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {proyectos.map(proyecto => (
+      <div class="border border-red-700 bg-black p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+        <img src={proyecto.imagen} alt={proyecto.nombre} class="w-full h-48 object-cover rounded-md" />
+        <h3 class="text-xl font-semibold mt-4">
+          <a href={proyecto.link} target="_blank" class="text-red-400 hover:text-red-500 transition">{proyecto.nombre}</a>
+        </h3>
+        <p class="text-sm text-red-300">{proyecto.descripcion}</p>
+        <p class="text-xs text-red-500">Tecnologías: {proyecto.tecnologias}</p>
+        <button onclick="window.open('{proyecto.link}', '_blank')" class="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition">
+          Ver más
+        </button>
+      </div>
+    ))}
+  </div>
+</section>
+
+
+
+
+
+    
+  
+
+
+      
+      
+      
+      
+      
       <section id="contacto" class="min-h-screen flex items-center justify-center">
         <h2 class="text-3xl font-bold">Contacto</h2>
       </section>
